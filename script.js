@@ -4,7 +4,6 @@ const results = document.getElementById("result");
 const speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 const recognition = new speechRecognition();
 
-let timeoutId;
 let isListening = false;
 
 recognition.interimResults = true;
@@ -16,7 +15,6 @@ recognition.onstart = function () {
     isListening = true;
     btn.innerText = "Stop Listening";
     btn.style.fontWeight = 'normal';
-    clearTimeout(timeoutId);
 }
 
 recognition.onresult = function (event) {
@@ -39,8 +37,6 @@ recognition.onresult = function (event) {
     interimText = interimText.charAt(0).toUpperCase() + interimText.slice(1);
 
     document.getElementById("result").innerHTML = `${interimText}<br><strong>${finalText}</strong>`;
-    
-    resetTimeout();
 }
 
 recognition.onerror = function (event) {
@@ -66,16 +62,11 @@ function startRecognition() {
     recognition.start();
 }
 
-function resetTimeout() {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(stopRecognition, 5000);
-}
-
 function stopRecognition() {
     if (recognition && recognition.active) {
         recognition.stop();
     }
-    console.log("Stopped due to inactivity.");
+    console.log("Stopped listening.");
     isListening = false;
     btn.innerText = "Speech To Text";
     btn.style.fontWeight = 'bold';
