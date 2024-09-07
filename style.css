@@ -1,0 +1,80 @@
+body {
+    background: #000;
+    color: #eee;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #eee;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-three {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 15px 20px;
+    width: 180px;
+    color: #eee;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.4s, color 0.4s;
+}
+
+.button-three:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.button-three:active {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#copied-message {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
