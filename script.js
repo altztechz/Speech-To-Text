@@ -79,6 +79,7 @@ function stopRecognition() {
     isListening = false;
     btn.innerText = "Speech To Text";
     btn.style.fontWeight = 'bold';
+    document.getElementById("result").innerHTML = "Text Is Shown Here!";
 }
 
 function copyDivToClipboard() {
@@ -93,5 +94,5 @@ function copyDivToClipboard() {
     copyBtn.innerText = "Copied";
     setTimeout(() => {
         copyBtn.innerText = originalText;
-    }, 1500);
+    }, 2000);
 }
